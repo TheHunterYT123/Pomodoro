@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: center; 
   align-items: center;   
-  background-image: url('/Pomodoro/IMAGES/FondoLobo.png');
+  background-image: url('FondoLobo.png');
   background-size: cover; 
   background-repeat: no-repeat;  
   background-attachment: fixed;       
