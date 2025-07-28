@@ -1,0 +1,322 @@
+/*__ESTILO GLOBAL__*/
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center; 
+  align-items: center;   
+  background-image: url('/Pomodoro/IMAGES/FondoLobo.png');
+  background-size: cover; 
+  background-repeat: no-repeat;  
+  background-attachment: fixed;       
+  background-position: center center; 
+  margin: 0;
+  padding: 0;
+  flex-direction: column; 
+}
+
+@media (min-width: 1200px) {
+  body {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.contenido-pagina {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  padding: 20px;
+}
+@media (min-width: 1000px) {
+  .contenido-pagina {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/*________________*/
+
+
+
+
+/*__TEMPORISADOR__*/
+.temporisador-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.temporisador-container {
+  position: relative;
+  background-color: transparent;
+  padding: 60px 90px;
+  border-radius: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 5rem;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgb(43, 11, 189);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.temporisador-container:hover {
+  transform: scale(1.01);
+}
+
+#temporizador {
+  min-width: 210px;      
+  display: inline-block;
+}
+.set-counter {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+}
+
+.boton-container {
+  margin-top: 20px;
+}
+
+.boton-container button {
+  position: relative;
+  background-color: #000269b2;
+  padding: 10px 70px;
+  border-radius: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgb(58, 21, 221);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.boton-container button:hover {
+  background-color: #0204aab2;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .temporisador-wrapper {
+    margin-top: 40px;
+  }
+}
+/*________________*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*__CALENDARIO__*/
+.calendario-wrapper {
+  position: absolute;
+  right: 100px;
+  top: 47%;
+  transform: translateY(-50%);
+  width: clamp(280px, 30vw, 500px);
+  z-index: 2;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+@media (min-width: 1200px) {
+  .contenido-pagina {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .calendario-wrapper {
+    width: 350px;
+    max-width: 400px;
+    margin: 0;
+  }
+}
+
+
+#fecha-actual {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.calendario {
+  border-radius: 20px;
+  border: 2px solid rgb(43, 11, 189);
+  padding: 15px;
+  background: rgba(0, 0, 50, 0.3);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.fila.dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: rgba(5, 3, 151, 0.801);
+  border-radius: 12px;
+  text-align: center;
+  padding: 8px 0;
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+}
+
+.fila.dias div {
+  color: white;
+}
+
+.grid-dias-mes {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.grid-dias-mes div {
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  font-size: 1rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+.grid-dias-mes .hoy {
+  background-color: #3b8ef2;
+  font-weight: bold;
+  border: 2px solid white;
+  color: white;
+}
+
+.grid-dias-mes .finde {
+  background-color: rgba(255, 100, 100, 0.199);
+  color: #ff7070;
+}
+/*________________*/
+
+
+
+
+
+/*__ESTADISTICAS__*/
+.estadisticas-wrapper {
+  position: absolute;
+  left: 80px;
+  top: 47%;
+  transform: translateY(-50%);
+  width: clamp(260px, 26vw, 400px);
+  padding: 25px;
+  background: rgba(0, 0, 50, 0.3);
+  border: 2px solid rgba(43, 11, 189, 0.7);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 255, 0.2), inset 0 0 15px rgba(0, 0, 255, 0.2);
+  color: white;
+  z-index: 2;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%   { transform: translateY(-50%) translateY(0); }
+  50%  { transform: translateY(-50%) translateY(-8px); }
+  100% { transform: translateY(-50%) translateY(0); }
+}
+
+.estadistica-box {
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 15px;
+  transition: background 0.3s;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.estadistica-box:hover {
+  background: rgba(255, 255, 255, 0.116);
+}
+
+.estadistica-box h3,
+.estadistica-box h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #cfdcff;
+  text-shadow: 0 0 5px rgba(0, 153, 255, 0.3);
+}
+
+.estadistica-box p {
+  margin: 8px 0 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.linea-separadora {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+  margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .estadisticas-wrapper {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+    width: 90%;
+    animation: none;
+  }
+}
+/*________________*/
+
+
+
+
+
+
+/*__MEDIAS GLOBALES__*/
+@media (max-width: 1299px) {
+  .contenido-pagina {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calendario-wrapper {
+    position: static;
+    transform: none;
+    margin-top: 40px;
+  }
+
+  .estadisticas-wrapper {
+    display: none !important;
+    visibility: hidden;
+    pointer-events: none;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+}
+
+/*________________*/

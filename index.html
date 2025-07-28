@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">\
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Pomodoro | 25:00</title>
+
+</head>
+<body>
+  
+  <div class="contenido-pagina">
+
+    <div class="estadisticas-wrapper">
+      <div class="estadistica-box">
+        <h3>Horas Totales</h3>
+        <p id="horasTotales">0 h</p>
+      </div>
+      <div class="estadistica-box">
+        <h3>Horas Semanales</h3>
+        <p id="horasSemanales">0 h</p>
+        <div class="linea-separadora"></div>
+        <h4>Promedio diario</h4>
+        <p id="promedioDiario">0 h/día</p>
+      </div>
+    </div>
+
+
+
+    <div class="temporisador-wrapper">
+      <div class="temporisador-container">
+        <div class="set-counter">Set 0</div>
+        <div id="temporizador">25:00</div>
+      </div>
+
+      <div class="boton-container">
+        <button id="btnIniciar"><i class="fas fa-play"></i></button>
+      </div>
+    </div>
+
+
+
+    <div class="calendario-wrapper">
+      <div id="fecha-actual" class="fecha-actual">Cargando fecha...</div>
+      <div class="calendario">
+        <div class="fila dias">
+          <div>D</div>
+          <div>L</div>
+          <div>M</div>
+          <div>M</div>
+          <div>J</div>
+          <div>V</div>
+          <div>S</div>
+        </div>
+        <div id="dias-del-mes" class="grid-dias-mes"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <audio id="alarmaAudio" src="/Pomodoro/IMAGES/alarma.mp3" preload="auto"></audio>
+ <script src="events.js"></script>
+</body>
+</html>
